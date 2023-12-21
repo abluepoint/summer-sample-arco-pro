@@ -8,7 +8,6 @@ import { ShareProvider } from './playground-editor/ShareProvider';
 import { MilkdownProvider } from '@milkdown/react';
 import { ProsemirrorAdapterProvider } from '@prosemirror-adapter/react';
 import { compose } from './utils/compose';
-import { nord } from '@milkdown/theme-nord';
 
 const { Title } = Typography;
 

@@ -27,7 +27,6 @@ import {
 import { Slice } from '@milkdown/prose/model';
 import { Milkdown as Editor } from '@milkdown/react';
 import { callCommand } from '@milkdown/utils';
-import clsx from 'clsx';
 import type { FC, RefObject } from 'react';
 import { useImperativeHandle } from 'react';
 import { usePlayground } from './usePlayground';
