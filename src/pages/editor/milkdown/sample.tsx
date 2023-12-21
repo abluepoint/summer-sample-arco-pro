@@ -16,7 +16,7 @@ import { emoji } from '@milkdown/plugin-emoji';
 import { diagram } from '@milkdown/plugin-diagram';
 import { indent } from '@milkdown/plugin-indent';
 // import { upload } from '@milkdown/plugin-upload';
-import { block } from '@milkdown/plugin-block';
+// import { block } from '@milkdown/plugin-block';
 
 const { Title } = Typography;
 
@@ -49,30 +49,31 @@ function slashPluginView(view) {
 }
 
 const MilkdownEditor: React.FC = () => {
-  useEditor((root) =>
-    Editor.make()
-      .config(nord)
-      .config((ctx) => {
-        ctx.set(rootCtx, root);
-        ctx.set(slash.key, {
-          view: slashPluginView,
-        });
-        // ctx.set(block.key, {
-        //   view: createBlockPluginView(ctx)
-        // })
-      })
-      .use(commonmark)
-      .use(gfm)
-      .use(history)
-      .use(clipboard)
-      .use(cursor)
-      .use(prism)
-      .use(math)
-      .use(slash)
-      .use(emoji)
-      .use(diagram)
-      .use(indent)
-      .use(block)
+  useEditor(
+    (root) =>
+      Editor.make()
+        .config(nord)
+        .config((ctx) => {
+          ctx.set(rootCtx, root);
+          ctx.set(slash.key, {
+            view: slashPluginView,
+          });
+          // ctx.set(block.key, {
+          //   view: createBlockPluginView(ctx)
+          // })
+        })
+        .use(commonmark)
+        .use(gfm)
+        .use(history)
+        .use(clipboard)
+        .use(cursor)
+        .use(prism)
+        .use(math)
+        .use(slash)
+        .use(emoji)
+        .use(diagram)
+        .use(indent)
+    // .use(block)
   );
 
   return <Milkdown />;

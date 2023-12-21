@@ -4,7 +4,7 @@ import { updateImageCommand } from '@milkdown/preset-commonmark';
 import { NodeSelection } from '@milkdown/prose/state';
 import { useInstance } from '@milkdown/react';
 import { usePluginViewContext } from '@prosemirror-adapter/react';
-import debounce from 'lodash.debounce';
+import { debounce } from 'lodash';
 import type { FC } from 'react';
 import { useEffect, useRef } from 'react';
 

@@ -32,7 +32,7 @@ export default function MilkDownEditorPage() {
   }, []);
   return (
     <Card>
-      <Title heading={6}>{'你好'}</Title>
+      <Title heading={6}>{'Milkdown Editor'}</Title>
       <Provider>
         <div>
           <PlaygroundMilkdown

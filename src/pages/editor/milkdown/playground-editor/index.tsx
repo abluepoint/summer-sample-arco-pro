@@ -1,4 +1,15 @@
-import { useLinkClass } from '../hooks';
+import { Button, Space } from '@arco-design/web-react';
+import {
+  IconUndo,
+  IconRedo,
+  IconBold,
+  IconItalic,
+  IconStrikethrough,
+  IconUnorderedList,
+  IconOrderedList,
+  IconNav,
+  IconQuote,
+} from '@arco-design/web-react/icon';
 import type { CmdKey } from '@milkdown/core';
 import { editorViewCtx, parserCtx } from '@milkdown/core';
 import { redoCommand, undoCommand } from '@milkdown/plugin-history';
@@ -20,27 +31,6 @@ import clsx from 'clsx';
 import type { FC, RefObject } from 'react';
 import { useImperativeHandle } from 'react';
 import { usePlayground } from './usePlayground';
-
-const Button: FC<{ icon: string; onClick?: () => void }> = ({
-  icon,
-  onClick,
-}) => {
-  const linkClass = useLinkClass();
-  return (
-    <div
-      className={clsx(
-        'flex h-10 w-10 cursor-pointer items-center justify-center rounded',
-        linkClass(false)
-      )}
-      onMouseDown={(e) => {
-        onClick?.();
-        e.preventDefault();
-      }}
-    >
-      <span className="material-symbols-outlined !text-base">{icon}</span>
-    </div>
-  );
-};
 
 interface MilkdownProps {
   content: string;
@@ -87,35 +77,35 @@ export const PlaygroundMilkdown: FC<MilkdownProps> = ({
   return (
     <div className="relative h-full pt-10">
       <div className="absolute top-0 h-10 w-full border-b border-nord4 dark:divide-gray-600 dark:border-gray-600">
-        <div className="prose mx-auto flex">
-          <Button icon="undo" onClick={() => call(undoCommand.key)} />
-          <Button icon="redo" onClick={() => call(redoCommand.key)} />
-          <Button
-            icon="format_bold"
-            onClick={() => call(toggleStrongCommand.key)}
-          />
-          <Button
-            icon="format_italic"
-            onClick={() => call(toggleEmphasisCommand.key)}
-          />
-          <Button
-            icon="format_strikethrough"
-            onClick={() => call(toggleStrikethroughCommand.key)}
-          />
-          <Button icon="table" onClick={() => call(insertTableCommand.key)} />
-          <Button
-            icon="format_list_bulleted"
-            onClick={() => call(wrapInBulletListCommand.key)}
-          />
-          <Button
-            icon="format_list_numbered"
-            onClick={() => call(wrapInOrderedListCommand.key)}
-          />
-          <Button
-            icon="format_quote"
-            onClick={() => call(wrapInBlockquoteCommand.key)}
-          />
-        </div>
+        <Space size="mini">
+          <Button onClick={() => call(undoCommand.key)}>
+            <IconUndo />
+          </Button>
+          <Button onClick={() => call(redoCommand.key)}>
+            <IconRedo />
+          </Button>
+          <Button onClick={() => call(toggleStrongCommand.key)}>
+            <IconBold />
+          </Button>
+          <Button onClick={() => call(toggleEmphasisCommand.key)}>
+            <IconItalic />
+          </Button>
+          <Button onClick={() => call(toggleStrikethroughCommand.key)}>
+            <IconStrikethrough />
+          </Button>
+          <Button onClick={() => call(insertTableCommand.key)}>
+            <IconNav />
+          </Button>
+          <Button onClick={() => call(wrapInBulletListCommand.key)}>
+            <IconUnorderedList />
+          </Button>
+          <Button onClick={() => call(wrapInOrderedListCommand.key)}>
+            <IconOrderedList />
+          </Button>
+          <Button onClick={() => call(wrapInBlockquoteCommand.key)}>
+            <IconQuote />
+          </Button>
+        </Space>
 
         <div />
       </div>

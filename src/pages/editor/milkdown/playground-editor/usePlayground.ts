@@ -38,7 +38,7 @@ import {
   usePluginViewFactory,
   useWidgetViewFactory,
 } from '@prosemirror-adapter/react';
-import debounce from 'lodash.debounce';
+import { debounce } from 'lodash';
 import { useEffect, useMemo } from 'react';
 import { refractor } from 'refractor/lib/common';
 import { Block } from './editor-component/Block';

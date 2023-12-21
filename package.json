@@ -64,13 +64,13 @@
     "bizcharts": "^4.1.23",
     "classnames": "^2.3.1",
     "clsx": "^1.2.1",
-    "lz-string": "^1.5.0",
-    "gemoji": "^8.1.0",
-    "mermaid": "^10.0.2",
-    "refractor": "^4.8.1",
-    "katex": "^0.16.4",
     "copy-to-clipboard": "^3.3.1",
+    "dayjs": "^1.11.10",
+    "gemoji": "^8.1.0",
+    "katex": "^0.16.4",
     "lodash": "^4.17.21",
+    "lz-string": "^1.5.0",
+    "mermaid": "^10.0.2",
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "query-string": "^6.13.8",
@@ -80,7 +80,8 @@
     "react-redux": "^7.2.6",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "redux": "^4.1.2"
+    "redux": "^4.1.2",
+    "refractor": "^4.8.1"
   },
   "devDependencies": {
     "@arco-plugins/webpack-react": "^1.1.1",
