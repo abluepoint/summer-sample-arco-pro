@@ -40,6 +40,8 @@ function getIconFromKey(key) {
       return <IconList className={styles.icon} />;
     case 'form':
       return <IconSettings className={styles.icon} />;
+    case 'editor':
+      return <IconSettings className={styles.icon} />;
     case 'profile':
       return <IconFile className={styles.icon} />;
     case 'visualization':
@@ -178,7 +180,7 @@ function PageLayout() {
   const paddingLeft = showMenu ? { paddingLeft: menuWidth } : {};
   const paddingTop = showNavbar ? { paddingTop: navbarHeight } : {};
   const paddingStyle = { ...paddingLeft, ...paddingTop };
-  
+
   function updateMenuStatus() {
     const pathKeys = pathname.split('/');
     const newSelectedKeys: string[] = [];

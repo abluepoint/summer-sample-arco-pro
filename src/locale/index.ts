@@ -1,5 +1,8 @@
 const i18n = {
   'en-US': {
+    'menu.editor': 'Editor',
+    'menu.editor.basic': 'Basic Editor',
+    'menu.editor.milkdown': 'Milkdown Editor',
     'menu.welcome': 'Welcome',
     'menu.dashboard': 'Dashboard',
     'menu.list': 'List',
@@ -59,6 +62,9 @@ const i18n = {
     'navbar.search.placeholder': 'Please search',
   },
   'zh-CN': {
+    'menu.editor': '编辑器',
+    'menu.editor.basic': '基础编辑器',
+    'menu.editor.milkdown': 'Milkdown 编辑器',
     'menu.dashboard': '仪表盘',
     'menu.list': '列表页',
     'menu.result': '结果页',

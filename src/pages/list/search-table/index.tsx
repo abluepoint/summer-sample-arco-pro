@@ -42,11 +42,7 @@ function SearchTable() {
   const [loading, setLoading] = useState(true);
   const [formParams, setFormParams] = useState({});
 
-  useEffect(() => {
-    fetchData();
-  }, [pagination.current, pagination.pageSize, JSON.stringify(formParams)]);
-
-  function fetchData() {
+  const fetchData = function () {
     const { current, pageSize } = pagination;
     setLoading(true);
     axios
@@ -67,7 +63,11 @@ function SearchTable() {
         });
         setLoading(false);
       });
-  }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [pagination.current, pagination.pageSize, JSON.stringify(formParams)]);
 
   function onChangeTable({ current, pageSize }) {
     setPatination({

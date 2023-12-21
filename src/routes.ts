@@ -92,6 +92,20 @@ export const routes: IRoute[] = [
     ],
   },
   {
+    name: 'menu.editor',
+    key: 'editor',
+    children: [
+      {
+        name: 'menu.editor.basic',
+        key: 'editor/basic',
+      },
+      {
+        name: 'menu.editor.milkdown',
+        key: 'editor/milkdown',
+      },
+    ],
+  },
+  {
     name: 'menu.profile',
     key: 'profile',
     children: [
