@@ -170,6 +170,9 @@ dependencies:
   gemoji:
     specifier: ^8.1.0
     version: 8.1.0
+  github-markdown-css:
+    specifier: ^5.5.0
+    version: 5.5.0
   katex:
     specifier: ^0.16.4
     version: 0.16.9
@@ -12262,6 +12265,14 @@ packages:
     dependencies:
       call-bind: 1.0.5
       get-intrinsic: 1.2.2
+
+  /github-markdown-css@5.5.0:
+    resolution:
+      {
+        integrity: sha512-Ncp4putm+cGteDhtNYKGdchM4uiIm5tmQcAQx/eEYhuM0sOdjZYNQOauQTaodjDQjfw7whU99MijwC1M0FUY4w==,
+      }
+    engines: { node: '>=10' }
+    dev: false
 
   /gl-matrix@3.4.3:
     resolution:
