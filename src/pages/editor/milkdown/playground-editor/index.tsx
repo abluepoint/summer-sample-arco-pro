@@ -30,6 +30,7 @@ import { callCommand } from '@milkdown/utils';
 import type { FC, RefObject } from 'react';
 import { useImperativeHandle } from 'react';
 import { usePlayground } from './usePlayground';
+import '@/style/milkdown.less';
 
 interface MilkdownProps {
   content: string;
@@ -105,10 +106,9 @@ export const PlaygroundMilkdown: FC<MilkdownProps> = ({
             <IconQuote />
           </Button>
         </Space>
-
         <div />
       </div>
-      <div className="h-full overflow-auto overscroll-none">
+      <div className="editor-container">
         <Editor />
       </div>
     </div>
