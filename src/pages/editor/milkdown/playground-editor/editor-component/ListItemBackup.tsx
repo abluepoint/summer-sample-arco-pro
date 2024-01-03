@@ -1,5 +1,4 @@
 import { useNodeViewContext } from '@prosemirror-adapter/react';
-import { Checkbox, Space } from '@arco-design/web-react';
 import type { FC } from 'react';
 
 export const ListItem: FC = () => {
@@ -14,18 +13,20 @@ export const ListItem: FC = () => {
         selected ? 'ProseMirror-selectednode' : '',
       ].join(' ')}
     >
-      <Space>
+      <span className="flex h-6 items-center">
         {checked != null ? (
-          <Checkbox
-            checked={checked}
+          <input
+            className="form-checkbox rounded"
             onChange={() => setAttrs({ checked: !checked })}
-          ></Checkbox>
+            type="checkbox"
+            checked={checked}
+          />
         ) : isBullet ? (
           <span className="h-2 w-2 rounded-full bg-nord8 dark:bg-nord9" />
         ) : (
           <span className="text-nord8">{attrs?.label}</span>
         )}
-      </Space>
+      </span>
       <div className="min-w-0" ref={contentRef} />
     </li>
   );

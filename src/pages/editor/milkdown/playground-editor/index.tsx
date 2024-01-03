@@ -30,6 +30,7 @@ import { callCommand } from '@milkdown/utils';
 import type { FC, RefObject } from 'react';
 import { useImperativeHandle } from 'react';
 import { usePlayground } from './usePlayground';
+import 'github-markdown-css/github-markdown.css';
 import '@/style/milkdown.less';
 
 interface MilkdownProps {
@@ -108,9 +109,9 @@ export const PlaygroundMilkdown: FC<MilkdownProps> = ({
         </Space>
         <div />
       </div>
-      <div className="editor-container">
+      <article className="markdown-body">
         <Editor />
-      </div>
+      </article>
     </div>
   );
 };
