@@ -4,7 +4,7 @@
   margin: 0 auto;
 }
 
-.summer-emoji {
+.milkdown-emoji {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   display: inline-block;
@@ -12,4 +12,37 @@
   vertical-align: text-top;
   width: 1em;
   height: 1em;
+}
+
+// flex-column flex items-start gap-2
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+// flex h-6 items-center
+.list-item-main-span {
+  display: flex;
+  height: 1.5rem;
+  align-items: center;
+}
+
+// h-2 w-2 rounded-full bg-nord8
+.list-item-span {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #88c0d0;
+}
+
+// min-w-0
+.list-item-content {
+  min-width: 0;
+}
+
+//text-nord8
+.list-item-text {
+  color: #88c0d0;
 }

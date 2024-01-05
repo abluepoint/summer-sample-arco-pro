@@ -146,7 +146,7 @@ export const usePlayground = (
         ctx.set(emojiAttr.key, () => ({
           container: {},
           img: {
-            class: 'summer-emoji',
+            class: 'milkdown-emoji',
           },
         }));
       },

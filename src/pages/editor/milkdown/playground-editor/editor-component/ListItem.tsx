@@ -1,5 +1,4 @@
 import { useNodeViewContext } from '@prosemirror-adapter/react';
-import { Checkbox, Space } from '@arco-design/web-react';
 import type { FC } from 'react';
 
 export const ListItem: FC = () => {
@@ -9,24 +8,25 @@ export const ListItem: FC = () => {
   const isBullet = attrs?.listType === 'bullet';
   return (
     <li
-      className={[
-        'flex-column flex items-start gap-2',
-        selected ? 'ProseMirror-selectednode' : '',
-      ].join(' ')}
+      className={['list-item', selected ? 'ProseMirror-selectednode' : ''].join(
+        ' '
+      )}
     >
-      <Space>
+      <span className="list-item-main-span">
         {checked != null ? (
-          <Checkbox
-            checked={checked}
+          <input
+            className="form-checkbox rounded"
             onChange={() => setAttrs({ checked: !checked })}
-          ></Checkbox>
+            type="checkbox"
+            checked={checked}
+          />
         ) : isBullet ? (
-          <span className="h-2 w-2 rounded-full bg-nord8 dark:bg-nord9" />
+          <span className="list-item-span dark:bg-nord9" />
         ) : (
-          <span className="text-nord8">{attrs?.label}</span>
+          <span className="list-item-text">{attrs?.label}</span>
         )}
-      </Space>
-      <div className="min-w-0" ref={contentRef} />
+      </span>
+      <div className="list-item-content" ref={contentRef} />
     </li>
   );
 };
