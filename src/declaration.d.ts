@@ -8,6 +8,11 @@ declare module '*.less' {
   export default classes;
 }
 
+declare module '*.md' {
+  const mdContent: string;
+  export default mdContent;
+}
+
 declare module '*/settings.json' {
   const value: {
     colorWeek: boolean;

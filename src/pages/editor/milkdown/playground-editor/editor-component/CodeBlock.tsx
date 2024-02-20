@@ -1,8 +1,13 @@
 import { useNodeViewContext } from '@prosemirror-adapter/react';
+import { Select, Button, Space } from '@arco-design/web-react';
 import clsx from 'clsx';
 import type { FC } from 'react';
+import { axisBottom } from 'd3';
+
+const Option = Select.Option;
 
 const langs = [
+  'java',
   'text',
   'typescript',
   'javascript',
@@ -15,18 +20,22 @@ const langs = [
 export const CodeBlock: FC = () => {
   const { contentRef, selected, node, setAttrs } = useNodeViewContext();
   return (
-    <div
-      className={clsx(
-        selected ? 'ProseMirror-selectednode' : '',
-        'not-prose my-4 rounded bg-gray-200 p-5 shadow dark:bg-gray-800'
-      )}
-    >
-      <div
-        contentEditable="false"
-        suppressContentEditableWarning
-        className="mb-2 flex justify-between"
-      >
-        <select
+    <div className={clsx(selected ? 'ProseMirror-selectednode' : '')}>
+      <Space style={{ paddingBottom: 5 }}>
+        <Select
+          value={node.attrs.language || 'text'}
+          style={{ width: 154 }}
+          onChange={(value) => {
+            setAttrs({ language: value });
+          }}
+        >
+          {langs.map((option) => (
+            <Option key={option} value={option}>
+              {option}
+            </Option>
+          ))}
+        </Select>
+        {/* <select
           className="!focus:shadow-none cursor-pointer rounded !border-0 bg-white shadow-sm focus:ring-2 focus:ring-offset-2 dark:bg-black"
           value={node.attrs.language || 'text'}
           onChange={(e) => {
@@ -38,19 +47,19 @@ export const CodeBlock: FC = () => {
               {lang}
             </option>
           ))}
-        </select>
+        </select> */}
 
-        <button
-          className="inline-flex items-center justify-center rounded border border-gray-200 bg-white px-4 py-2 text-base font-medium leading-6 shadow-sm hover:bg-gray-50 focus:ring-2 focus:ring-offset-2 dark:bg-black"
+        <Button
+          type="secondary"
           onClick={(e) => {
             e.preventDefault();
             navigator.clipboard.writeText(node.textContent);
           }}
         >
           Copy
-        </button>
-      </div>
-      <pre spellCheck={false} className="!m-0 !mb-4">
+        </Button>
+      </Space>
+      <pre spellCheck={false}>
         <code ref={contentRef} />
       </pre>
     </div>

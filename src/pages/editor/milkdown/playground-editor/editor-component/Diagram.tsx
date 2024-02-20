@@ -49,11 +49,7 @@ export const Diagram: FC = () => {
         setValue(value);
       }}
     >
-      <TabPane
-        key="preview"
-        title="preview"
-        className="border-b border-gray-200 text-center text-gray-500 dark:border-gray-700 dark:text-gray-400"
-      >
+      <TabPane key="preview" title="preview">
         <div
           ref={codePanel}
           className={clsx(

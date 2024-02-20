@@ -18,9 +18,14 @@ module.exports = {
       },
     }),
     addWebpackModuleRule({
+      test: /\.md$/,
+      loader: 'raw-loader',
+    }),
+    addWebpackModuleRule({
       test: /\.svg$/,
       loader: '@svgr/webpack',
     }),
+
     addWebpackPlugin(
       new ArcoWebpackPlugin({
         theme: '@arco-themes/react-arco-pro',
